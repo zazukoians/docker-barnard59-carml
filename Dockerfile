@@ -11,10 +11,12 @@ RUN mvn clean package && mv carml-app/target/carml-jar-*.jar /carml/carml.jar
 FROM docker.io/library/node:18-alpine
 
 ENV CARML_PATH="/carml/carml.jar"
+ARG BARNARD59_VERSION="1.1.2"
 
 WORKDIR /app
 
 RUN apk add --no-cache openjdk11-jre-headless
 COPY --from=builder /carml/carml.jar "${CARML_PATH}"
+RUN npm install -g "barnard59@${BARNARD59_VERSION}"
 
 ENTRYPOINT []
