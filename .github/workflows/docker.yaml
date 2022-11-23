@@ -32,7 +32,7 @@ jobs:
         uses: zazuko/action-docker-meta@main
         id: docker_meta
         with:
-          images: ghcr.io/zazukoians/docker-barnard59-carml
+          images: ghcr.io/zazukoians/barnard59-carml
 
       - name: Build and push Docker images
         id: docker_build
