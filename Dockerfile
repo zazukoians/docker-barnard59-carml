@@ -1,4 +1,4 @@
-FROM docker.io/library/maven:3.8.4-openjdk-11 as builder
+FROM --platform=$BUILDPLATFORM docker.io/library/maven:3.8.4-openjdk-11 as builder
 
 ARG GIT_CHECKOUT="417a3ab6aa8b3df3819d2b96443a806221d251d6"
 
